@@ -1,0 +1,53 @@
+**********************************************************************************
+   DR. RVR NRI INSTITUTE OF TECHNOLOGY - SMART CAMPUS MANAGEMENT SIMULATION
+**********************************************************************************
+
+==============================================================================================
+                          STUDENT ACADEMIC & ELIGIBILITY REPORT
+==============================================================================================
+Roll No    Student Name      Dept     Total   Pct %  Grade   Att %    Fee   Exam Status
+----------------------------------------------------------------------------------------------
+26CSE001   Aaditya Roy       CSE      275.0   91.7%     O   88.0%   PAID      ELIGIBLE
+26CSE002   Bhavya Sri        CSE      235.0   78.3%     A   82.0%   PAID      ELIGIBLE
+26ECE001   Charan Teja       ECE      184.0   61.3%    B+   68.5%    DUE        BARRED
+26ECE002   Divya Reddy       ECE      263.0   87.7%    A+   91.0%   PAID      ELIGIBLE
+26MEC001   Eshwar Rao        MEC      155.0   51.7%     B   71.0%   PAID        BARRED
+26INF001   Fatima Zahra      INF      270.0   90.0%     O   95.0%   PAID      ELIGIBLE
+----------------------------------------------------------------------------------------------
+[!] EXAMINATION ADMIT CARD WITHHELD (BARRED DUE TO DEFICIENCIES):
+    - Charan Teja (26ECE001 - ECE): Shortage of attendance (68.5% < 75.0%), Semester tuition fee due
+    - Eshwar Rao (26MEC001 - MEC): Shortage of attendance (71.0% < 75.0%)
+==============================================================================================
+
+[*] TESTING EVENT REGISTRATION SYSTEM:
+    - Attempt 1: Success! 26CSE001 registered for 48-Hour Dussehra Hackathon (2/2 filled).
+    - Attempt 2 (Overflow Test): Registration failed! 48-Hour Dussehra Hackathon has reached full capacity (2/2).
+    - Attempt 3 (Duplicate Test): Student 26CSE001 is already registered for National AI & Robotics Symposium.
+
+[*] TESTING LAB & VENUE RESOURCE SCHEDULER:
+    - Booking Attempt 1 (Conflict Test): Collision! Advanced Computing Lab is already booked for slot '09:00-11:00' by CSE department.
+    - Booking Attempt 2 (Valid Slot)   : Success! ECE Seminar Hall reserved for CSE during slot '11:00-13:00'.
+
+========================================================================================
+                        CAMPUS EVENTS & CAPACITY DASHBOARD
+========================================================================================
+Code       Event Name                            Capacity    Enrolled Roll Numbers
+----------------------------------------------------------------------------------------
+EVT-AI     National AI & Robotics Symposium      2/3         26CSE001, 26CSE002
+EVT-HACK   48-Hour Dussehra Hackathon            2/2         26INF001, 26CSE001
+EVT-WKS    Cloud Computing Workshop              2/4         26ECE002, 26MEC001
+----------------------------------------------------------------------------------------
+
+========================================================================================
+                      CAMPUS VENUE & LAB RESOURCE SCHEDULE
+========================================================================================
+Venue ID   Venue Name                         CapActive Bookings (Slot -> Dept)
+----------------------------------------------------------------------------------------
+LAB-301    Advanced Computing Lab              60   09:00-11:00 (CSE); 14:00-16:00 (INF)
+AUD-101    Sir C.V. Raman Auditorium          250   10:00-13:00 (INSTITUTE)
+SEM-201    ECE Seminar Hall                    80   11:00-13:00 (CSE)
+========================================================================================
+
+**********************************************************************************
+              SIMULATION COMPLETED SUCCESSFULLY WITH ZERO ERRORS                  
+**********************************************************************************

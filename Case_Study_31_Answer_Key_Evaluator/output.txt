@@ -1,0 +1,39 @@
+============================================================================================
+                      NATIONAL ENTRANCE EXAMINATION SYSTEM
+                    AUTOMATED ANSWER EVALUATION & MERIT AUDIT
+============================================================================================
+Master Answer Key (15 Questions): ABCDABCDABCDABC
+Marking Scheme: Correct: +4 | Incorrect: -1 | Unanswered: 0 | Max Marks: 60
+--------------------------------------------------------------------------------------------
+Rank Roll No    Student Name       Correct  Wrong  Skip  Net Score  Accuracy   Net %  Result
+--------------------------------------------------------------------------------------------
+1    26ENG001   Kavya Reddy             15      0     0         60/60    100.0%  100.0%  QUALIFIED
+2    26ENG003   Naveen Kumar            14      1     0         55/60     93.3%   91.7%  QUALIFIED
+3    26ENG007   Teja Vardhan            14      1     0         55/60     93.3%   91.7%  QUALIFIED
+4    26ENG002   Manoj Varma             12      0     3         48/60    100.0%   80.0%  QUALIFIED
+5    26ENG006   Sneha Patel              7      8     0         20/60     46.7%   33.3%  NEEDS IMPR
+--------------------------------------------------------------------------------------------
+[!] DISQUALIFIED / MALFORMED ANSWER STRINGS DETECTED:
+    - Roll: 26ENG004 | Name: Pooja Sharma -> Reason: Length mismatch: Expected 15, found 16
+    - Roll: 26ENG005 | Name: Rajesh Gupta -> Reason: Invalid character detected: 'Z'. Only A, B, C, D, X permitted.
+--------------------------------------------------------------------------------------------
+
+[*] QUESTION-WISE DIFFICULTY & SUCCESS RATE ANALYTICS:
+Q No    Correct Count  Wrong Count   Skipped   Success Rate   Difficulty Classification
+----------------------------------------------------------------------------------------
+Q-1                 4            1         0          80.0%                        EASY
+Q-2                 4            1         0          80.0%                        EASY
+Q-3                 5            0         0         100.0%                        EASY
+Q-4                 5            0         0         100.0%                        EASY
+Q-5                 4            1         0          80.0%                        EASY
+Q-6                 4            1         0          80.0%                        EASY
+Q-7                 5            0         0         100.0%                        EASY
+Q-8                 5            0         0         100.0%                        EASY
+Q-9                 4            1         0          80.0%                        EASY
+Q-10                4            1         0          80.0%                        EASY
+Q-11                5            0         0         100.0%                        EASY
+Q-12                5            0         0         100.0%                        EASY
+Q-13                3            1         1          60.0%                    MODERATE
+Q-14                3            1         1          60.0%                    MODERATE
+Q-15                2            2         1          40.0%                    MODERATE
+============================================================================================

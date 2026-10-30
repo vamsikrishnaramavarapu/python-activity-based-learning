@@ -1,0 +1,26 @@
+==============================================================================================
+                      DR. RVR NRI INSTITUTE OF TECHNOLOGY
+                    ACADEMIC DATABASE CONSISTENCY & INTEGRITY AUDIT
+==============================================================================================
+Total Raw Records Ingested : 7
+Verified Consistent Records: 2 (28.6%)
+Defective / Flagged Records: 5 (71.4%)
+----------------------------------------------------------------------------------------------
+VERIFIED CLEAN STUDENT RECORDS:
+Roll No    Student Name        Marks                    Att %    Fee    Standing
+----------------------------------------------------------------------------------------------
+26CSE101   Aaditya Roy         (92.0, 88.0, 95.0)       86.5%   PAID        HONORS
+26CSE102   Gautam Krishna      (78.0, 82.0, 79.0)       84.0%   PAID       REGULAR
+----------------------------------------------------------------------------------------------
+[!] INTEGRITY DEFECT & INCONSISTENCY LOG:
+    - Record #2 (Ref: 26CSE101) | Type: INTEGRITY_VIOLATION
+      Defects: DUPLICATE_ID: Roll number '26CSE101' has already been registered.
+    - Record #3 (Ref: XXXYZ999) | Type: INTEGRITY_VIOLATION
+      Defects: Roll Error: Year prefix (first 2) and serial (last 3) must be numeric digits.
+    - Record #4 (Ref: 26ECE201) | Type: INTEGRITY_VIOLATION
+      Defects: Marks Error: Mark -15.0 out of valid bounds [0.0, 100.0].
+    - Record #5 (Ref: 26MEC301) | Type: INTEGRITY_VIOLATION
+      Defects: Name Error: Name contains invalid non-alphabetic characters: 'E1'.; Attendance Error: Attendance 108.5% out of range [0.0, 100.0].
+    - Record #6 (Ref: 26INF401) | Type: INTEGRITY_VIOLATION
+      Defects: Contradiction: Student marked 'HONORS' but attendance is deficient (62.0% < 75%).
+==============================================================================================

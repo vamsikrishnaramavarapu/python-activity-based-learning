@@ -1,0 +1,25 @@
+========================================================================================
+                        DR. RVR NRI POWER DISTRIBUTION CORP.
+                      PROGRESSIVE ELECTRICITY BILLING STATEMENT
+========================================================================================
+Consumer ID : CONS-50921      Consumer Name : Sri Durga Prasad
+Meter Number: MTR-AP-8841     Tariff Class  : Domestic (LT-1)
+----------------------------------------------------------------------------------------
+Month       Units  Energy(Rs)  Fixed(Rs)  Surch(Rs)  Rebate(Rs)  Net Pay(Rs)      Status
+----------------------------------------------------------------------------------------
+January      90.0      225.00      75.00       0.00        9.00       291.00  NORMAL      
+February    140.0      400.00      75.00       0.00       14.25       460.75  SPIKE (+55.56%)
+March       210.0      677.00      75.00       0.00        0.00       752.00  SPIKE (+50.0%)
+April       460.0     2085.00      75.00     108.00        0.00      2268.00  SPIKE (+119.05%)
+May         480.0     2225.00      75.00     115.00        0.00      2415.00  NORMAL      
+June        180.0      550.00      75.00       0.00        0.00       625.00  DROP (-62.5%)
+----------------------------------------------------------------------------------------
+Total Consumption : 1560.0 Units  | Average Monthly Consumption : 260.0 Units
+Total Cumulative  : Rs 6,811.75 | Average Monthly Billed Amt  : Rs 1,135.29
+----------------------------------------------------------------------------------------
+[!] ANOMALY AUDIT REPORT:
+    - Month February: 140.0 units recorded -> Unusual surge detected: SPIKE (+55.56%)
+    - Month March: 210.0 units recorded -> Unusual surge detected: SPIKE (+50.0%)
+    - Month April: 460.0 units recorded -> Unusual surge detected: SPIKE (+119.05%)
+    Recommendation: Inspect meter wiring or audit high-power appliances for faults.
+========================================================================================

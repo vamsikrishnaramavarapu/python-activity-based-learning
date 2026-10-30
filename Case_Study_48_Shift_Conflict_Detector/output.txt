@@ -1,0 +1,27 @@
+==============================================================================================
+                      CAMPUS HOSPITAL & FACILITY MANAGEMENT
+                     EMPLOYEE SHIFT SCHEDULE & CONFLICT AUDIT
+==============================================================================================
+Shift ID  Emp ID    Employee Name     Day        Start   End     Duration   Department      
+----------------------------------------------------------------------------------------------
+SH-101    EMP-01    Dr. A. Sharma     Monday     08:00   14:00   6h 00m     Emergency       
+SH-102    EMP-01    Dr. A. Sharma     Monday     13:00   19:00   6h 00m     ICU Support     
+SH-103    EMP-02    Nurse B. Devi     Monday     07:00   15:00   8h 00m     General Ward    
+SH-104    EMP-02    Nurse B. Devi     Monday     19:00   23:00   4h 00m     Night Check     
+SH-105    EMP-03    Tech C. Rao       Monday     08:00   20:00   12h 00m    Radiology Lab   
+SH-106    EMP-04    Dr. D. Varma      Monday     09:00   17:00   8h 00m     Cardiology      
+SH-107    EMP-01    Dr. A. Sharma     Tuesday    09:00   17:00   8h 00m     OPD Clinic      
+----------------------------------------------------------------------------------------------
+Total Shifts Scheduled: 7 | Conflicts / Violations Detected: 3
+----------------------------------------------------------------------------------------------
+[!] DETECTED SCHEDULE CONFLICTS & LABOUR VIOLATIONS:
+    [1] CATEGORY: EXCESSIVE_DURATION
+        Details : Shift SH-105 for Tech C. Rao (EMP-03) on Monday exceeds maximum daily work limit: 12h 0m > 10h limit.
+        Shifts  : SH-105
+    [2] CATEGORY: DIRECT_OVERLAP
+        Details : Collision between SH-101 (08:00-14:00) and SH-102 (13:00-19:00) for Dr. A. Sharma (EMP-01) on Monday. Overlap: 60 mins.
+        Shifts  : SH-101, SH-102
+    [3] CATEGORY: INSUFFICIENT_REST
+        Details : Rest violation between SH-103 and SH-104 for Nurse B. Devi on Monday: Rest gap is only 4h 0m (< 8h required).
+        Shifts  : SH-103, SH-104
+==============================================================================================

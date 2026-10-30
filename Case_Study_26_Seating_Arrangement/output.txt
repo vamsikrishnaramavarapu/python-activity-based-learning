@@ -1,0 +1,18 @@
+======================================================================
+                    ROOM 302 - MAIN ACADEMIC BLOCK                    
+              EXAMINATION SEATING MATRIX & AUDIT REPORT               
+======================================================================
+Row / Col    Col-1        Col-2        Col-3        Col-4     
+----------------------------------------------------------------------
+Row-1     | [PWD-SEAT] | [CSE-101]  | [ECE-201]  | [CSE-102]  |
+Row-2     | [ECE-202]  | [MEC-301]  | [INF-401]  | [ECE-203]  |
+Row-3     | [CSE-103]  | [INF-402]  | [MEC-302]  | [CSE-104]  |
+Row-4     | [ECE-204]  | [MEC-303]  | [INF-403]  | [INVIG-BF] |
+----------------------------------------------------------------------
+Hall Capacity      : 16 Desks (4 Rows x 4 Columns)
+Students Allocated : 14
+Desks Vacant/Buffer: 2
+Unallocated Count  : 0
+
+[*] SUCCESS: All students allocated adhering to alternate-branch constraints!
+======================================================================

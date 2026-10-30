@@ -1,0 +1,49 @@
+==========================================================================================
+                      CAMPUS HACKATHON & PROJECT SELECTION
+                    SERPENTINE SCORE-BALANCED GROUP ALLOCATION
+==========================================================================================
+Target Number of Teams : 4 Teams
+Maximum Total Disparity: 3.0 points between highest and lowest team totals
+------------------------------------------------------------------------------------------
+
+TEAM #1  | Members: 4 | Total Score:  302.0 | Avg Score: 75.50 | Range: [50.0 - 98.5]
+  Roll ID   Student Name             Score
+  ------------------------------------------
+  26CS01    Aaditya Roy               98.5
+  26CS08    Harika Devi               78.0
+  26CS09    Indrajit Paul             75.5
+  26CS16    Pooja Hegde               50.0
+
+TEAM #2  | Members: 4 | Total Score:  303.5 | Avg Score: 75.88 | Range: [55.0 - 95.0]
+  Roll ID   Student Name             Score
+  ------------------------------------------
+  26CS02    Bhavya Sri                95.0
+  26CS07    Gautam Krishna            81.5
+  26CS10    Jaya Lakshmi              72.0
+  26CS15    Omkar Nath                55.0
+
+TEAM #3  | Members: 4 | Total Score:  304.5 | Avg Score: 76.12 | Range: [59.5 - 92.0]
+  Roll ID   Student Name             Score
+  ------------------------------------------
+  26CS03    Charan Teja               92.0
+  26CS06    Fatima Zahra              84.0
+  26CS11    Kalyan Varma              69.0
+  26CS14    Nandini Sen               59.5
+
+TEAM #4  | Members: 4 | Total Score:  305.0 | Avg Score: 76.25 | Range: [63.0 - 89.0]
+  Roll ID   Student Name             Score
+  ------------------------------------------
+  26CS04    Divya Reddy               89.0
+  26CS05    Eshwar Rao                86.5
+  26CS12    Lavanya Nair              66.5
+  26CS13    Manoj Kumar               63.0
+
+------------------------------------------------------------------------------------------
+SUMMARY COMPARATIVE SCORE TABLE:
+Team ID      Member Count    Total Score  Average Score      Balance Status
+------------------------------------------------------------------------------------------
+Team 1                  4          302.0          75.50       WELL-BALANCED
+Team 2                  4          303.5          75.88       WELL-BALANCED
+Team 3                  4          304.5          76.12       WELL-BALANCED
+Team 4                  4          305.0          76.25       WELL-BALANCED
+==========================================================================================
