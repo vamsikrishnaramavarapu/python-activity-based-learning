@@ -1,8 +1,4 @@
-"""
-Case Study 75: Integrated Student Record Consistency Checker
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Loops, Strings, String Operations, Lists, Tuples, and Tuple Unpacking.
-"""
+"""Check student records for common mistakes."""
 
 def validate_roll_number_format(roll_no):
     """

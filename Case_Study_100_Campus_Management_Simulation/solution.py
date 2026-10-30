@@ -1,9 +1,4 @@
-"""
-Case Study 100: Comprehensive Smart Campus Management Simulation
-Syllabus Concepts: Computational Thinking, Variables, Data Types, Operators,
-                   Conditional Statements, Loops, Strings, Pattern Generation,
-                   Lists, Nested Lists, Tuples, and Tuple Unpacking.
-"""
+"""Show sample student, event, and room information for a campus."""
 
 def create_initial_campus_data():
     """

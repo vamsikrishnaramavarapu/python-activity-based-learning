@@ -1,6 +1,4 @@
-"""
-Root Test Suite: Execute and Verify All 10 Activity-Based Learning Case Studies
-"""
+"""Run all 10 case study programs and show which ones work."""
 import os
 import subprocess
 import sys
@@ -19,36 +17,32 @@ CASE_STUDIES = [
 ]
 
 def main():
-    print("=" * 80)
-    print("  DR. RVR NRI INSTITUTE OF TECHNOLOGY - ABL ASSIGNMENT TEST SUITE")
-    print("=" * 80)
+    print("Running the case study programs")
     
     passed_count = 0
     total = len(CASE_STUDIES)
     
     for title, script_path in CASE_STUDIES:
         full_path = os.path.normpath(script_path)
-        print(f"\n[RUNNING] {title} ({full_path})...")
+        print(f"\nRunning {title}...")
         
         result = subprocess.run([sys.executable, full_path], capture_output=True, text=True)
         
         if result.returncode == 0:
-            print(f"  --> PASSED (Exit Code 0)")
+            print("  Passed")
             passed_count += 1
         else:
-            print(f"  --> FAILED (Exit Code {result.returncode})")
-            print("  STDERR:")
+            print(f"  Failed (exit code {result.returncode})")
+            print("  Error:")
             print(result.stderr)
             
-    print("\n" + "=" * 80)
-    print(f"  SUMMARY: {passed_count}/{total} CASE STUDIES PASSED SUCCESSFULLY")
-    print("=" * 80)
+    print(f"\nResult: {passed_count} of {total} programs ran successfully.")
     
     if passed_count == total:
-        print("[SUCCESS] All 10 case study programs execute without errors!")
+        print("All programs ran without errors.")
         sys.exit(0)
     else:
-        print("[ERROR] Some case studies failed. Please review.")
+        print("Some programs had errors. Check the messages above.")
         sys.exit(1)
 
 if __name__ == "__main__":

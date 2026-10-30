@@ -1,8 +1,4 @@
-"""
-Case Study 42: Student Marks Matrix Analysis and Performance Classification
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Nested Loops, Lists, Nested Lists, Tuples, and Tuple Unpacking.
-"""
+"""Calculate student grades and check subject results."""
 
 def compute_grade(percentage, has_failed_any_subject):
     """Determine letter grade according to academic grading scale."""

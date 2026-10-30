@@ -1,8 +1,4 @@
-"""
-Case Study 27: Advanced Numeric Pattern Generator
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Nested Loops, Pattern Generation, Strings, Lists, Tuples.
-"""
+"""Check a pattern size and print two number diamonds."""
 
 def validate_pattern_dimension(n):
     """

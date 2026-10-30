@@ -1,8 +1,4 @@
-"""
-Case Study 31: String-Based Examination Answer Evaluation and Negative Marking
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Loops, Strings, String Indexing & Slicing, Lists, Tuples, and Tuple Unpacking.
-"""
+"""Compare student answers with an answer key and calculate scores."""
 
 def validate_answer_string(answer_str, expected_length):
     """

@@ -1,8 +1,4 @@
-"""
-Case Study 26: Nested Loop Examination Seating Generator
-Syllabus Concepts: Computational Thinking, Variables, Data Types, Conditional Statements,
-                   Nested Loops, Strings, Lists, Nested Lists, Tuples, and Tuple Unpacking.
-"""
+"""Make a seating plan and check nearby seats."""
 
 def create_hall_grid(rows, cols):
     """Initialize a 2D grid of size rows x cols with vacant desk indicators."""

@@ -1,24 +1,20 @@
-"""
-Consolidated Academic Report Generator for Python Activity-Based Learning
-Converts all 10 case study documentations, source codes, flowcharts, and execution logs
-into a single, publication-quality HTML document and compiles it to PDF via Microsoft Edge.
-"""
+"""Build a simple HTML and PDF report from the case study files."""
 
 import os
 import subprocess
 import sys
 
 CASE_DIRS = [
-    ("Case 02: Progressive Electricity Billing and Anomaly Detection", "Case_Study_02_Electricity_Billing"),
-    ("Case 26: Nested Loop Examination Seating Generator", "Case_Study_26_Seating_Arrangement"),
-    ("Case 27: Advanced Numeric & Hollow Diamond Pattern Generator", "Case_Study_27_Pattern_Generator"),
-    ("Case 31: String-Based Examination Answer Evaluation", "Case_Study_31_Answer_Key_Evaluator"),
-    ("Case 42: Student Marks Matrix Analysis", "Case_Study_42_Marks_Matrix_Analysis"),
-    ("Case 48: Tuple-Based Employee Shift Conflict Detection", "Case_Study_48_Shift_Conflict_Detector"),
-    ("Case 56: Student Group Formation with Score Balancing", "Case_Study_56_Score_Balancing_Groups"),
-    ("Case 75: Integrated Student Record Consistency Checker", "Case_Study_75_Record_Consistency_Checker"),
-    ("Case 91: Advanced String-Based Registration Record Analyzer", "Case_Study_91_Registration_Analyzer"),
-    ("Case 100: Comprehensive Smart Campus Management Simulation", "Case_Study_100_Campus_Management_Simulation")
+    ("Case 02: Electricity Bill", "Case_Study_02_Electricity_Billing"),
+    ("Case 26: Exam Seating Plan", "Case_Study_26_Seating_Arrangement"),
+    ("Case 27: Number Patterns", "Case_Study_27_Pattern_Generator"),
+    ("Case 31: Answer Key", "Case_Study_31_Answer_Key_Evaluator"),
+    ("Case 42: Marks Analysis", "Case_Study_42_Marks_Matrix_Analysis"),
+    ("Case 48: Shift Checker", "Case_Study_48_Shift_Conflict_Detector"),
+    ("Case 56: Student Groups", "Case_Study_56_Score_Balancing_Groups"),
+    ("Case 75: Student Record Checker", "Case_Study_75_Record_Consistency_Checker"),
+    ("Case 91: Registration Checker", "Case_Study_91_Registration_Analyzer"),
+    ("Case 100: Campus Management", "Case_Study_100_Campus_Management_Simulation")
 ]
 
 HTML_TEMPLATE = """<!DOCTYPE html>
@@ -27,200 +23,79 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <title>Python Activity-Based Learning Consolidated Report</title>
 <style>
-  @page {
-    size: A4;
-    margin: 18mm 15mm 18mm 15mm;
-  }
+  @page { size: A4; margin: 18mm; }
   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #1e293b;
-    line-height: 1.55;
-    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
     font-size: 11pt;
     margin: 0;
-    padding: 0;
   }
-  .page-break {
-    page-break-before: always;
-  }
-  .avoid-break {
-    page-break-inside: avoid;
-  }
-  
-  /* Cover Page Styling */
+  .page-break { page-break-before: always; }
   .cover {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border: 3px double #1e3a8a;
-    padding: 40px 25px;
+    border: 2px solid #444;
+    padding: 24px;
     box-sizing: border-box;
   }
-  .inst-header {
-    font-size: 22pt;
-    font-weight: 800;
-    color: #1e3a8a;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 4px;
-  }
-  .inst-sub {
-    font-size: 11pt;
-    color: #475569;
-    margin-bottom: 25px;
-  }
+  .inst-header { font-size: 20pt; font-weight: bold; }
+  .inst-sub { margin-top: 8px; }
   .report-title {
-    font-size: 20pt;
-    font-weight: 700;
-    color: #0f172a;
-    background: #f1f5f9;
-    padding: 18px 24px;
-    border-radius: 8px;
-    border-left: 6px solid #2563eb;
-    margin: 30px 0;
-    width: 88%;
+    font-size: 18pt;
+    margin: 28px 0;
+    padding: 16px;
+    border: 1px solid #777;
+    width: 85%;
   }
-  .report-sub {
-    font-size: 13pt;
-    color: #2563eb;
-    font-weight: 600;
-  }
-  .meta-box {
-    margin-top: 40px;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    padding: 22px 30px;
-    text-align: left;
-    width: 75%;
-    font-size: 11.5pt;
-  }
-  .meta-box table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .meta-box td {
-    padding: 6px 10px;
-  }
-  .meta-box td.label {
-    font-weight: 700;
-    color: #334155;
-    width: 35%;
-  }
-
-  /* Document Content Styling */
+  .report-sub { font-size: 13pt; margin-bottom: 8px; }
+  .meta-box { margin-top: 18px; text-align: left; }
+  .meta-box table { border-collapse: collapse; }
+  .meta-box td { padding: 5px 10px; }
+  .meta-box td.label { font-weight: bold; }
   h1.case-title {
-    color: #1e3a8a;
     font-size: 17pt;
-    border-bottom: 2px solid #2563eb;
+    border-bottom: 1px solid #555;
     padding-bottom: 6px;
-    margin-top: 15px;
-    margin-bottom: 15px;
   }
-  h2.section-header {
-    color: #0f172a;
-    font-size: 12.5pt;
-    margin-top: 18px;
-    margin-bottom: 8px;
-    border-left: 4px solid #3b82f6;
-    padding-left: 8px;
-  }
-  p, li {
-    font-size: 10.5pt;
-    color: #334155;
-    margin: 4px 0;
-  }
-  ul, ol {
-    margin-top: 4px;
-    margin-bottom: 8px;
-    padding-left: 22px;
-  }
-  
-  /* Tables */
-  table.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 9.5pt;
-  }
+  h2.section-header { font-size: 13pt; margin-top: 18px; }
+  p, li { font-size: 10.5pt; }
+  table.data-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
   table.data-table th, table.data-table td {
-    border: 1px solid #cbd5e1;
-    padding: 6px 9px;
+    border: 1px solid #888;
+    padding: 5px;
     text-align: left;
   }
-  table.data-table th {
-    background-color: #f1f5f9;
-    color: #1e293b;
-    font-weight: 700;
-  }
-  table.data-table tr:nth-child(even) {
-    background-color: #f8fafc;
-  }
-
-  /* Code & Pre */
-  pre.code-block {
-    background: #0f172a;
-    color: #e2e8f0;
-    padding: 12px;
-    border-radius: 6px;
-    font-family: 'Consolas', 'Courier New', monospace;
-    font-size: 8.5pt;
-    line-height: 1.4;
-    overflow-x: auto;
-    border: 1px solid #334155;
-    margin: 8px 0;
-  }
-  pre.output-block {
-    background: #1e1e1e;
-    color: #4ade80;
-    padding: 12px;
-    border-radius: 6px;
-    font-family: 'Consolas', 'Courier New', monospace;
+  table.data-table th { background: #eee; }
+  pre.code-block, pre.output-block {
+    background: #f5f5f5;
+    color: #222;
+    padding: 10px;
+    font-family: Consolas, monospace;
     font-size: 8.5pt;
     line-height: 1.35;
     white-space: pre-wrap;
-    border: 1px solid #374151;
-    margin: 8px 0;
+    border: 1px solid #aaa;
   }
-
-  .diagram-container {
-    text-align: center;
-    margin: 15px 0;
-    background: #0f172a;
-    padding: 15px;
-    border-radius: 8px;
-    page-break-inside: avoid;
-  }
-  .badge {
-    display: inline-block;
-    padding: 2px 7px;
-    border-radius: 4px;
-    font-size: 8.5pt;
-    font-weight: bold;
-    background: #dbeafe;
-    color: #1e40af;
-  }
+  .diagram-container { text-align: center; margin: 12px 0; }
 </style>
 </head>
 <body>
 
 <!-- Cover Page -->
 <div class="cover">
-  <div class="inst-header">Dr. RVR NRI Institute of Technology</div>
-  <div class="inst-sub">An Institution Deemed to be University u/s 3 of UGC Act, 1956<br>Pothavarappadu (V), Agiripalli (M), Vijayawada Rural, Eluru Dist., Andhra Pradesh</div>
-  
-  <div style="font-size: 14pt; font-weight: bold; color: #475569; text-transform: uppercase; letter-spacing: 1px;">
-    School of Computer Studies
-  </div>
+  <div class="inst-header">Python Programming</div>
+  <div class="inst-sub">I B.Tech. | Activity-Based Learning Assignment</div>
   
   <div class="report-title">
-    <div class="report-sub">I B.Tech. - Python Programming Course</div>
-    Activity-Based Learning (ABL) Assignment
-    <div style="font-size: 11pt; font-weight: normal; color: #475569; margin-top: 8px;">
-      Comprehensive Technical Report on 10 Selected Difficult-Level Case Studies
+    <div class="report-sub">10 Case Studies</div>
+    Activity-Based Learning
+    <div style="font-size: 11pt; font-weight: normal; margin-top: 8px;">
+      Programs, flowcharts, and example output
     </div>
   </div>
 
@@ -234,26 +109,8 @@ HTML_TEMPLATE = """<!DOCTYPE html>
         <td class="label">Roll Number:</td>
         <td><strong>[YOUR ROLL NUMBER HERE]</strong></td>
       </tr>
-      <tr>
-        <td class="label">Academic Program:</td>
-        <td>B.Tech. in Computer Science & Engineering</td>
-      </tr>
-      <tr>
-        <td class="label">Section / Year:</td>
-        <td>Section A | I Year (2026–2027)</td>
-      </tr>
-      <tr>
-        <td class="label">Faculty Mentor:</td>
-        <td>Department of Computer Science & Engineering</td>
-      </tr>
-      <tr>
-        <td class="label">GitHub Repository:</td>
-        <td><code>Python-Activity-Based-Learning</code></td>
-      </tr>
-      <tr>
-        <td class="label">Date of Submission:</td>
-        <td>October 2026</td>
-      </tr>
+      <tr><td class="label">Branch:</td><td>Computer Science & Engineering</td></tr>
+      <tr><td class="label">Year:</td><td>I B.Tech.</td></tr>
     </table>
   </div>
 </div>
@@ -261,12 +118,12 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <div class="page-break"></div>
 
 <!-- Table of Contents & Executive Summary -->
-<h1 class="case-title" style="text-align: center;">Executive Summary & Syllabus Mapping</h1>
+<h1 class="case-title" style="text-align: center;">About this project</h1>
 <p>
-This consolidated laboratory report fulfills the requirements of the <strong>Python Programming Activity-Based Learning (ABL) Assignment</strong> issued by the Dean of Computer Studies and Course Coordinator at Dr. RVR NRI Institute of Technology. Ten high-rigor, difficult-level case studies were engineered covering the entire breadth of the foundational syllabus without introducing prohibited external libraries.
+This report contains the 10 Python programs in this folder. They use sample data to show ideas like loops, conditions, strings, lists, and tuples. Each case has a short explanation, a flowchart, the code, and its example output.
 </p>
 
-<h2 class="section-header">Summary of Selected Case Studies</h2>
+<h2 class="section-header">Case studies</h2>
 <table class="data-table">
   <thead>
     <tr>

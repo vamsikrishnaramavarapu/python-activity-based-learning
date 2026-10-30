@@ -1,8 +1,4 @@
-"""
-Case Study 02: Progressive Electricity Billing and Anomaly Detection
-Syllabus Concepts: Variables, Data Types, Operators, Conditional Statements,
-                   Loops, Strings, Lists, Tuples, and Tuple Unpacking.
-"""
+"""Calculate monthly electricity bills and compare usage."""
 
 def calculate_slab_energy_charge(units):
     """Calculate energy charges using progressive tariff slabs."""

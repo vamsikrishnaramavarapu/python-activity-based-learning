@@ -1,8 +1,4 @@
-"""
-Case Study 91: Advanced String-Based Registration Record Analyzer
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Loops, Strings, String Slicing & Methods, Lists, Tuples, and Tuple Unpacking.
-"""
+"""Read registration details from text and check their format."""
 
 def parse_and_validate_date(dob_str):
     """

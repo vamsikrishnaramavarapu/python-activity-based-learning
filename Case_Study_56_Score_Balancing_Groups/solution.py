@@ -1,8 +1,4 @@
-"""
-Case Study 56: Student Group Formation with Score Balancing Engine
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Loops, Lists, Nested Lists, Tuples, and Tuple Unpacking.
-"""
+"""Sort students by score and share them between groups."""
 
 def bubble_sort_students_descending(student_list):
     """

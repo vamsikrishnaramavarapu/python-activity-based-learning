@@ -1,8 +1,4 @@
-"""
-Case Study 48: Tuple-Based Employee Shift Conflict Detection
-Syllabus Concepts: Computational Thinking, Variables, Operators, Conditional Statements,
-                   Loops, Strings, Lists, Tuples, and Tuple Unpacking.
-"""
+"""Check employee shifts for overlaps and short rest periods."""
 
 def parse_time_to_minutes(time_str):
     """
