@@ -42,7 +42,7 @@ The `report` folder has a combined report. Run `python report/generate_report.py
 
 ## Student details
 
-- Name: [Your name]
-- Roll number: [Your roll number]
-- Branch: CSE
+- Name: R.VAMSI KRISHNA
+- Roll number: 26001108
+- Branch: CSM
 - Year: I B.Tech
